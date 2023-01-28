@@ -5,7 +5,7 @@ services:
     image: eclipse-mosquitto:2.0
     restart: unless-stopped
     volumes:
-      - "./mosquitto-data:/mosquitto"
+      - "./data/mosquitto:/mosquitto"
     ports:
       - "1883:1883"
       - "9001:9001"
@@ -16,7 +16,7 @@ services:
     restart: unless-stopped
     image: koenkk/zigbee2mqtt
     volumes:
-      - ./zigbee2mqtt-data:/app/data
+      - ./data/zigbee2mqtt:/app/data
       - /run/udev:/run/udev:ro
     ports:
       - 8081:8080
@@ -29,7 +29,7 @@ services:
     container_name: homeassistant
     image: "ghcr.io/home-assistant/home-assistant:stable"
     volumes:
-      - ./homeassistant-data:/config
+      - ./data/homeassistant:/config
       - /etc/localtime:/etc/localtime:ro
     restart: unless-stopped
     privileged: true
