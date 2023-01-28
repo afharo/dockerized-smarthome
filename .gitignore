@@ -1,0 +1,5 @@
+# Ignoring all the files inside data except the specific ones we want to keep in version control
+data/*/**
+!data/*/.gitkeep
+!data/zigbee2mqtt/configuration.base.yaml
+
