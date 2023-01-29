@@ -17,10 +17,10 @@ I can rely on different brands and vendors without buying hubs for each one of t
 
 It looks like Z2M is the answer for Zigbee-based devices.
 
-**Installation:** Copy the [configuration.base.yaml](./data/zigbee2mqtt/configuration.base.yaml) to `/data/zigbee2mqtt/configuration.yaml`
+**Installation:** Copy the [configuration.base.yaml](.data/zigbee2mqtt/configuration.base.yaml) to `data/zigbee2mqtt/configuration.yaml`
 
 ```bash
-cp /data/zigbee2mqtt/configuration.base.yaml /data/zigbee2mqtt/configuration.yaml
+cp data/zigbee2mqtt/configuration.base.yaml data/zigbee2mqtt/configuration.yaml
 ```
 
 And make sure the `ttyUSB0` still matches the name associated to your Zigbee dongle (`sudo dmesg` can help with figuring it out). This check needs to happen in `configuration.yaml` and `docker-compose.yml`.
