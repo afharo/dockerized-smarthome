@@ -19,7 +19,7 @@ It looks like Z2M is the answer for Zigbee-based devices.
 
 **Installation:** Copy the [configuration.base.yaml](./data/zigbee2mqtt/configuration.base.yaml) to `/data/zigbee2mqtt/configuration.yaml`
 
-```
+```bash
 cp /data/zigbee2mqtt/configuration.base.yaml /data/zigbee2mqtt/configuration.yaml
 ```
 
