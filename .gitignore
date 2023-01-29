@@ -3,6 +3,10 @@ data/*/**
 !data/*/.gitkeep
 !data/zigbee2mqtt/configuration.base.yaml
 
+# Ignoring all files in BACKUP except .gitkeep
+BACKUPS/*
+!BACKUPS/.gitkeep
+
 # IDE
 .vscode/
 .idea/

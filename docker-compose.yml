@@ -2,8 +2,8 @@ version: '3.3'
 services:
   mqtt:
     container_name: mqtt
-    image: eclipse-mosquitto:2.0
     restart: unless-stopped
+    image: eclipse-mosquitto:2.0
     volumes:
       - "./data/mosquitto:/mosquitto"
     ports:
@@ -19,18 +19,34 @@ services:
       - ./data/zigbee2mqtt:/app/data
       - /run/udev:/run/udev:ro
     ports:
-      - 8081:8080
+      - "8081:8080"
     environment:
-      - TZ=Europe/Berlin
+      - TZ=Europe/Madrid
     devices:
       - /dev/ttyUSB0:/dev/ttyUSB0
 
   homeassistant:
     container_name: homeassistant
+    restart: unless-stopped
     image: "ghcr.io/home-assistant/home-assistant:stable"
     volumes:
       - ./data/homeassistant:/config
       - /etc/localtime:/etc/localtime:ro
-    restart: unless-stopped
     privileged: true
     network_mode: host
+
+  duplicati:
+    container_name: duplicati
+    restart: unless-stopped
+    image: lscr.io/linuxserver/duplicati:latest
+    environment:
+      - PUID=1000 # run "id $USER" to fetch these
+      - PGID=1000
+      - TZ=Europe/Madrid
+      - CLI_ARGS= #optional
+    volumes:
+      - ./data/duplicati:/config
+      - ./BACKUPS:/backups
+      - ./data:/source
+    ports:
+      - "8200:8200"
