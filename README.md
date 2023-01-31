@@ -60,3 +60,5 @@ cp ./data/homebridge/homebridge.base.env ./data/homebridge/homebridge.env
 ```
 
 And set the environment variables as needed.
+
+DISCLAIMER: I'm using a private Docker image for the time being. So other folks might not be able to run it. I'll try to anonymize the other project, so I can make it public, and so the Docker image.
