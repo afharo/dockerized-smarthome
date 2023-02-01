@@ -10,6 +10,11 @@ services:
       - ./data/homebridge/homebridge.env
     privileged: true
     network_mode: host
+    logging:
+      driver: json-file
+      options:
+        max-size: "10mb"
+        max-file: "1"
 
   mqtt:
     container_name: mqtt
