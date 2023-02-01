@@ -2,6 +2,7 @@
 data/*/**
 !data/*/.gitkeep
 !data/zigbee2mqtt/configuration.base.yaml
+!data/homebridge/homebridge.base.env
 
 # Ignoring all files in BACKUP except .gitkeep
 BACKUPS/*

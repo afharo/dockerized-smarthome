@@ -1,5 +1,16 @@
 version: '3.3'
 services:
+  homebridge:
+    container_name: homebridge
+    restart: unless-stopped
+    image: "afharo/homebridge:latest"
+    volumes:
+      - ./data/homebridge:/root/.homebridge
+    env_file:
+      - ./data/homebridge/homebridge.env
+    privileged: true
+    network_mode: host
+
   mqtt:
     container_name: mqtt
     restart: unless-stopped
@@ -19,7 +30,7 @@ services:
       - ./data/zigbee2mqtt:/app/data
       - /run/udev:/run/udev:ro
     ports:
-      - "8081:8080"
+      - "8080:8080"
     environment:
       - TZ=Europe/Madrid
     devices:

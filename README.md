@@ -17,7 +17,7 @@ I can rely on different brands and vendors without buying hubs for each one of t
 
 It looks like Z2M is the answer for Zigbee-based devices.
 
-**Installation:** Copy the [configuration.base.yaml](.data/zigbee2mqtt/configuration.base.yaml) to `data/zigbee2mqtt/configuration.yaml`
+**Installation:** Copy the [configuration.base.yaml](./data/zigbee2mqtt/configuration.base.yaml) to `data/zigbee2mqtt/configuration.yaml`
 
 ```bash
 cp data/zigbee2mqtt/configuration.base.yaml data/zigbee2mqtt/configuration.yaml
@@ -47,14 +47,18 @@ And make sure the `ttyUSB0` still matches the name associated to your Zigbee don
 
 DISCLAIMER: Duplicati dropped support for the architecture `linux/arm/v7` because the managing the underlying libraries and dependencies in this architecture was too complex. If running on a Raspberry Pi, make sure it's running a 64 bits OS.
 
-## Services I plan to add
-
-This is the list of the services I plan to add, but I haven't yet.
-
 ### Homebridge
 
 **URL**: <https://homebridge.io>
 
 **Why:** As a HomeKit user, there are devices that would make a great addition to my automations, but they are not officially supported by this platform. I've been using this project for a long while, and I've already found out Home Assistant cannot fully replace it.
 
-**What's stopping me?** I need to dockerize my current homebridge project and configuration. I hope I can do so soon enough.
+**Installation:** Copy the [homebridge.base.env](./data/homebridge/homebridge.base.env) to `./data/homebridge/homebridge.env`
+
+```bash
+cp ./data/homebridge/homebridge.base.env ./data/homebridge/homebridge.env
+```
+
+And set the environment variables as needed.
+
+DISCLAIMER: I'm using a private Docker image for the time being. So other folks might not be able to run it. I'll try to anonymize the other project, so I can make it public, and so the Docker image.
