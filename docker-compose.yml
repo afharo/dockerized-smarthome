@@ -3,7 +3,7 @@ services:
   homebridge:
     container_name: homebridge
     restart: unless-stopped
-    image: "afharo/homebridge:latest"
+    image: "afharo/homebridge:8"
     volumes:
       - ./data/homebridge:/root/.homebridge
     env_file:
@@ -30,7 +30,7 @@ services:
   zigbee2mqtt:
     container_name: zigbee2mqtt
     restart: unless-stopped
-    image: koenkk/zigbee2mqtt
+    image: koenkk/zigbee2mqtt:1.30.1
     volumes:
       - ./data/zigbee2mqtt:/app/data
       - /run/udev:/run/udev:ro
@@ -44,7 +44,7 @@ services:
   homeassistant:
     container_name: homeassistant
     restart: unless-stopped
-    image: "ghcr.io/home-assistant/home-assistant:stable"
+    image: "homeassistant/home-assistant:2023.2"
     volumes:
       - ./data/homeassistant:/config
       - /etc/localtime:/etc/localtime:ro
@@ -54,7 +54,7 @@ services:
   duplicati:
     container_name: duplicati
     restart: unless-stopped
-    image: lscr.io/linuxserver/duplicati:latest
+    image: linuxserver/duplicati:2.0.6
     environment:
       - PUID=0 # run "id $USER" to fetch these (using root because some containers like homeassistant are privileged and write as root)
       - PGID=0
