@@ -5,5 +5,10 @@
   },
   "docker-compose": {
     "enabled": true
-  }
+  },
+  "packageRules": [
+    {
+      "excludePackageNames": [ "afharo/homebridge" ]
+    }
+  ]
 }
