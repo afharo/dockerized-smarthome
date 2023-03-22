@@ -1,14 +1,4 @@
 {
   "extends": [ "config:base" ],
-  "docker": {
-    "enabled": true
-  },
-  "docker-compose": {
-    "enabled": true
-  },
-  "packageRules": [
-    {
-      "excludePackageNames": [ "afharo/homebridge" ]
-    }
-  ]
+  "ignoreDeps": ["afharo/homebridge" ]
 }
