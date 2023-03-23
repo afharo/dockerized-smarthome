@@ -1,5 +1,16 @@
 version: '3.3'
 services:
+  hotspot:
+    container_name: hotspot
+    restart: unless-stopped
+    image: sdelrio/rpi-hostap
+    environment:
+      - INTERFACE=wlan0
+    network_mode: host
+    privileged: true
+    profiles:
+      - no-network
+
   homebridge:
     container_name: homebridge
     restart: unless-stopped
