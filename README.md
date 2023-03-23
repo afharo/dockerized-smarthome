@@ -62,3 +62,19 @@ cp ./data/homebridge/homebridge.base.env ./data/homebridge/homebridge.env
 And set the environment variables as needed.
 
 DISCLAIMER: I'm using a private Docker image for the time being. So other folks might not be able to run it. I'll try to anonymize the other project, so I can make it public, and so the Docker image.
+
+### Hotspot
+
+I'm using a hotspot service so my RPi can expose a Wi-Fi AP that I can connect to when I need to take it to a place with no internet.
+
+I'm leveraging the `profiles` feature of docker-compose to avoid running this image all the time. To enable it, I need to run either:
+
+```bash
+docker-compose up hotspot -d
+```
+
+or
+
+```bash
+docker-compose --profile no-network up -d
+```
