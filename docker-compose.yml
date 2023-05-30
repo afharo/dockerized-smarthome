@@ -10,6 +10,11 @@ services:
     privileged: true
     profiles:
       - no-network
+    logging:
+      driver: json-file
+      options:
+        max-size: "10mb"
+        max-file: "1"
 
   homebridge:
     container_name: homebridge
@@ -37,6 +42,11 @@ services:
       - "1883:1883"
       - "9001:9001"
     command: "mosquitto -c /mosquitto-no-auth.conf"
+    logging:
+      driver: json-file
+      options:
+        max-size: "10mb"
+        max-file: "1"
 
   zigbee2mqtt:
     container_name: zigbee2mqtt
@@ -51,6 +61,11 @@ services:
       - TZ=Europe/Madrid
     devices:
       - /dev/ttyUSB0:/dev/ttyUSB0
+    logging:
+      driver: json-file
+      options:
+        max-size: "10mb"
+        max-file: "1"
 
   homeassistant:
     container_name: homeassistant
@@ -61,6 +76,11 @@ services:
       - /etc/localtime:/etc/localtime:ro
     privileged: true
     network_mode: host
+    logging:
+      driver: json-file
+      options:
+        max-size: "10mb"
+        max-file: "1"
 
   duplicati:
     container_name: duplicati
@@ -77,3 +97,8 @@ services:
       - ./data:/source
     ports:
       - "8200:8200"
+    logging:
+      driver: json-file
+      options:
+        max-size: "10mb"
+        max-file: "1"
