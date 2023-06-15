@@ -70,7 +70,7 @@ services:
   homeassistant:
     container_name: homeassistant
     restart: unless-stopped
-    image: "homeassistant/home-assistant:2023.6.1"
+    image: "homeassistant/home-assistant:2023.6.2"
     volumes:
       - ./data/homeassistant:/config
       - /etc/localtime:/etc/localtime:ro
