@@ -74,6 +74,7 @@ services:
     volumes:
       - ./data/homeassistant:/config
       - /etc/localtime:/etc/localtime:ro
+      - /run/dbus:/run/dbus:ro # Necessary for the Bluetooth integration
     privileged: true
     network_mode: host
     logging:
