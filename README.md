@@ -63,6 +63,42 @@ And set the environment variables as needed.
 
 DISCLAIMER: I'm using a private Docker image for the time being. So other folks might not be able to run it. I'll try to anonymize the other project, so I can make it public, and so the Docker image.
 
+### Remote Access
+
+For remote access I need to use 2 additional services: a Dynamic DNS and a VPN.
+
+#### Dynamic DNS: DuckDNS
+
+**URL:** https://www.duckdns.org
+
+**Why:** We need a service that allows us to have a domain that points to our public IP. Typically, the public IP in our router is not static and rotates from time to time. This service would make sure we can point to a static DNS that translates to the current public IP.
+
+**Installation:** Copy the [duckdns.base.env](./data/duckdns/duckdns.base.env) to `./data/duckdns/duckdns.env`
+
+```bash
+cp ./data/duckdns/duckdns.base.env ./data/duckdns/duckdns.env
+```
+
+And set the environment variables as needed. Documentation on the settings to this service can be found in the official README: https://hub.docker.com/r/linuxserver/duckdns
+
+Typically, it's just defining the subdomain that was created in the website, and the token retrieved from the website.
+
+#### VPN: WireGuard
+
+**URL:** https://www.wireguard.com
+
+**Why:** I may need remote access to the system from time to time in case something doesn't work as expected. I've read WireGuard is better than OpenVPN, and much simpler to use, so I looked no-more.
+
+**Installation:** Copy the [wireguard.base.env](./data/wireguard/wireguard.base.env) to `./data/wireguard/wireguard.env`
+
+```bash
+cp ./data/wireguard/wireguard.base.env ./data/wireguard/wireguard.env
+```
+
+And set the environment variables as needed. Documentation on the settings to this service can be found in the official README: https://github.com/linuxserver/docker-wireguard
+
+Typically, it's just about updating the `SERVERURL` to match the domain obtained from DuckDNS.
+
 ### Hotspot
 
 I'm using a hotspot service so my RPi can expose a Wi-Fi AP that I can connect to when I need to take it to a place with no internet.
