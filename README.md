@@ -99,6 +99,8 @@ And set the environment variables as needed. Documentation on the settings to th
 
 Typically, it's just about updating the `SERVERURL` to match the domain obtained from DuckDNS.
 
+:warning: Remember to enable port forwarding to 51820/udp in the router.
+
 ### Hotspot
 
 I'm using a hotspot service so my RPi can expose a Wi-Fi AP that I can connect to when I need to take it to a place with no internet.

@@ -121,6 +121,11 @@ services:
     volumes:
       - ./duckdns/config:/config #optional
     restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: "10mb"
+        max-file: "1"
   # VPN
   wireguard:
     image: lscr.io/linuxserver/wireguard:latest
@@ -149,3 +154,8 @@ services:
     sysctls:
       - net.ipv4.conf.all.src_valid_mark=1
     restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: "10mb"
+        max-file: "1"
