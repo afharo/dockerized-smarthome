@@ -3,6 +3,8 @@ data/*/**
 !data/*/.gitkeep
 !data/zigbee2mqtt/configuration.base.yaml
 !data/homebridge/homebridge.base.env
+!data/duckdns/duckdns.base.env
+!data/wireguard/wireguard.base.env
 
 # Ignoring all files in BACKUP except .gitkeep
 BACKUPS/*
