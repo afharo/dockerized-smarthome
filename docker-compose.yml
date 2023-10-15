@@ -73,6 +73,7 @@ services:
     image: "homeassistant/home-assistant:2023.10.3"
     volumes:
       - ./data/homeassistant:/config
+      - ./data/media:/media # Persist any files uploaded to "My media"
       - /etc/localtime:/etc/localtime:ro
       - /run/dbus:/run/dbus:ro # Necessary for the Bluetooth integration
     privileged: true
