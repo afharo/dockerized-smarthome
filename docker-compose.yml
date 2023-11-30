@@ -3,7 +3,7 @@ services:
   hotspot:
     container_name: hotspot
     restart: unless-stopped
-    image: sdelrio/rpi-hostap
+    image: sdelrio/rpi-hostap:0.31
     environment:
       - INTERFACE=wlan0
     network_mode: host
@@ -19,6 +19,7 @@ services:
   homebridge:
     container_name: homebridge
     restart: unless-stopped
+    # intentionally using :latest because it's a private image and renovate cannot see the updates
     image: "afharo/homebridge:latest"
     volumes:
       - ./data/homebridge:/root/.homebridge
@@ -110,6 +111,7 @@ services:
   ##############################################################
   # Dynamic DNS
   duckdns:
+    # Using `latest` because it doesn't follow semantic versioning
     image: lscr.io/linuxserver/duckdns:latest
     container_name: duckdns
     env_file:
@@ -129,7 +131,7 @@ services:
         max-file: "1"
   # VPN
   wireguard:
-    image: lscr.io/linuxserver/wireguard:latest
+    image: lscr.io/linuxserver/wireguard:1.0.20210914
     container_name: wireguard
     cap_add:
       - NET_ADMIN
