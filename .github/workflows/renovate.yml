@@ -25,7 +25,7 @@ jobs:
       - name: Renovate Bot GitHub Action
         uses: renovatebot/github-action@v39.1.4
         with:
-          configurationFile: renovate/config.js
+          configurationFile: .github/renovate/config.js
           token: ${{ secrets.RENOVATE_TOKEN }}
           env-regex: "^(?:RENOVATE_\\w+|LOG_LEVEL|GITHUB_COM_TOKEN|NODE_OPTIONS|DOCKER_HUB_USER|DOCKER_HUB_PASSWORD)$"
         env:
