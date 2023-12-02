@@ -1,7 +1,7 @@
 module.exports = {
   extends: [ "config:recommended" ],
   branchPrefix: "gh-actions-renovate/",
-  includePaths: [ "../../" ],
+  repositories: [ "afharo/dockerized-smarthome" ],
   hostRules: [
     {
       hostType: 'docker',
