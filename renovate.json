@@ -1,4 +1,3 @@
 {
-  "extends": [ "config:base" ],
-  "ignoreDeps": ["afharo/homebridge" ]
+  "extends": ["config:recommended"]
 }
