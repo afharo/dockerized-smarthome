@@ -1,0 +1,33 @@
+name: Renovate
+
+on:
+  # Run daily
+  schedule:
+    - cron: "0 8 * * *"
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "update_dependencies"
+  update_dependencies:
+    name: "Update Dependencies"
+
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      # Runs Renovate in this repo with custom configuration (due to the need for secrets)
+      - name: Renovate Bot GitHub Action
+        uses: renovatebot/github-action@v39.1.4
+        with:
+          configurationFile: renovate/config.js
+          token: ${{ secrets.RENOVATE_TOKEN }}
+          env-regex: "^(?:RENOVATE_\\w+|LOG_LEVEL|GITHUB_COM_TOKEN|NODE_OPTIONS|DOCKER_HUB_USER|DOCKER_HUB_PASSWORD)$"
+        env:
+          DOCKER_HUB_USER: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
