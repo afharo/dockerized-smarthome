@@ -1,6 +1,7 @@
 module.exports = {
-  extends: [ "config:base" ],
+  extends: [ "config:recommended" ],
   branchPrefix: "gh-actions-renovate/",
+  includePaths: [ "../../" ],
   hostRules: [
     {
       hostType: 'docker',
