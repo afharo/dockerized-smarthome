@@ -19,8 +19,7 @@ services:
   homebridge:
     container_name: homebridge
     restart: unless-stopped
-    # intentionally using :latest because it's a private image and renovate cannot see the updates
-    image: "afharo/homebridge:latest"
+    image: "afharo/homebridge:1"
     volumes:
       - ./data/homebridge:/root/.homebridge
     env_file:
@@ -112,7 +111,7 @@ services:
   # Dynamic DNS
   duckdns:
     # Using `latest` because it doesn't follow semantic versioning
-    image: lscr.io/linuxserver/duckdns:latest
+    image: linuxserver/duckdns:latest
     container_name: duckdns
     env_file:
       - ./data/duckdns/duckdns.env
@@ -131,7 +130,7 @@ services:
         max-file: "1"
   # VPN
   wireguard:
-    image: lscr.io/linuxserver/wireguard:1.0.20210914
+    image: linuxserver/wireguard:1.0.20210914
     container_name: wireguard
     cap_add:
       - NET_ADMIN
