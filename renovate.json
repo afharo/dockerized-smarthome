@@ -1,3 +1,9 @@
 {
-  "extends": ["config:recommended"]
+  "extends": ["config:recommended"],
+  "packageRules": [
+    {
+      "matchDepTypes": ["action"],
+      "automerge": true
+    }
+  ]
 }
