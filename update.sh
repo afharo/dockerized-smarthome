@@ -51,4 +51,8 @@ fi
 echo "Launching updated services"
 docker-compose up -d
 
+echo "Clean up Docker images and unused resources"
+docker image prune -af
+docker system prune -af
+
 echo "Done!"
