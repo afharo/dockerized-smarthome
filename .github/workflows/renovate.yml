@@ -3,7 +3,7 @@ name: Renovate
 on:
   # Run every 15 minutes
   schedule:
-    - cron: '0/15 * * * *'
+    - cron: "0/15 * * * *"
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -18,6 +18,14 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      # Get token so that PRs are not published using my account
+      - name: Get token
+        id: get_token
+        uses: tibdex/github-app-token@v1
+        with:
+          private_key: ${{ secrets.private_key }}
+          app_id: ${{ secrets.app_id }}
+
       - name: Checkout
         uses: actions/checkout@v4
 
@@ -26,7 +34,7 @@ jobs:
         uses: renovatebot/github-action@v39.2.1
         with:
           configurationFile: .github/renovate/config.js
-          token: ${{ secrets.RENOVATE_TOKEN }}
+          token: "${{ steps.get_token.outputs.token }}"
           env-regex: "^(?:RENOVATE_\\w+|LOG_LEVEL|GITHUB_COM_TOKEN|NODE_OPTIONS|DOCKER_HUB_USER|DOCKER_HUB_PASSWORD)$"
         env:
           DOCKER_HUB_USER: ${{ secrets.DOCKER_USERNAME }}
