@@ -37,6 +37,12 @@ And make sure the `ttyUSB0` still matches the name associated to your Zigbee don
 
 **Why:** While I'm a hard HomeKit user for now (we'll see if Matter will change that), I want to start exploring HA to see what all the fuzz is about. It also helps me bridge Z2M devices to HomeKit. However, I'm still in exploration phase... I might use [`homebridge-z2m`](https://github.com/itavero/homebridge-z2m) in the future instead.
 
+### Matter Server
+
+**URL:** <https://github.com/home-assistant-libs/python-matter-server>
+
+**Why:** Needed by Home Assistant to support Matter devices ([docs](https://www.home-assistant.io/integrations/matter)).
+
 ### Duplicati
 
 **URL:** <https://www.duplicati.com>
@@ -69,7 +75,7 @@ For remote access I need to use 2 additional services: a Dynamic DNS and a VPN.
 
 #### Dynamic DNS: DuckDNS
 
-**URL:** https://www.duckdns.org
+**URL:** <https://www.duckdns.org>
 
 **Why:** We need a service that allows us to have a domain that points to our public IP. Typically, the public IP in our router is not static and rotates from time to time. This service would make sure we can point to a static DNS that translates to the current public IP.
 
@@ -79,13 +85,13 @@ For remote access I need to use 2 additional services: a Dynamic DNS and a VPN.
 cp ./data/duckdns/duckdns.base.env ./data/duckdns/duckdns.env
 ```
 
-And set the environment variables as needed. Documentation on the settings to this service can be found in the official README: https://hub.docker.com/r/linuxserver/duckdns
+And set the environment variables as needed. Documentation on the settings to this service can be found in the official README: <https://hub.docker.com/r/linuxserver/duckdns>
 
 Typically, it's just defining the subdomain that was created in the website, and the token retrieved from the website.
 
 #### VPN: WireGuard
 
-**URL:** https://www.wireguard.com
+**URL:** <https://www.wireguard.com>
 
 **Why:** I may need remote access to the system from time to time in case something doesn't work as expected. I've read WireGuard is better than OpenVPN, and much simpler to use, so I looked no-more.
 
@@ -95,7 +101,7 @@ Typically, it's just defining the subdomain that was created in the website, and
 cp ./data/wireguard/wireguard.base.env ./data/wireguard/wireguard.env
 ```
 
-And set the environment variables as needed. Documentation on the settings to this service can be found in the official README: https://github.com/linuxserver/docker-wireguard
+And set the environment variables as needed. Documentation on the settings to this service can be found in the official README: <https://github.com/linuxserver/docker-wireguard>
 
 Typically, it's just about updating the `SERVERURL` to match the domain obtained from DuckDNS.
 
