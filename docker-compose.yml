@@ -192,7 +192,6 @@ services:
     volumes:
       - ./data/adguard/data:/opt/adguardhome/work
       - ./data/adguard/config:/opt/adguardhome/conf
-    network_mode: host
     ports:
       # DNS pors
       - "53:53/tcp"
