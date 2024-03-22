@@ -69,6 +69,14 @@ And set the environment variables as needed.
 
 DISCLAIMER: I'm using a private Docker image for the time being. So other folks might not be able to run it. I'll try to anonymize the other project, so I can make it public, and so the Docker image.
 
+### AdGuard Home
+
+**URL**: <https://github.com/AdguardTeam/AdGuardHome>
+
+**Why:** Free local DNS-based ad-blocker that I can set at the router level. Do I need to explain why?
+
+**Installation:** Once running, set the router to the IP of the host running this service.
+
 ### Remote Access
 
 For remote access I need to use 2 additional services: a Dynamic DNS and a VPN.
