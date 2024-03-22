@@ -180,3 +180,27 @@ services:
       options:
         max-size: "10mb"
         max-file: "1"
+
+  ##############################################################
+  # AdBlocker                                                  #
+  ##############################################################
+  # Docs in https://hub.docker.com/r/adguard/adguardhome
+  adguard:
+    container_name: adguard
+    restart: unless-stopped
+    image: "adguard/adguardhome:v0.107.46"
+    volumes:
+      - ./data/adguard/data:/opt/adguardhome/work
+      - ./data/adguard/config:/opt/adguardhome/conf
+    network_mode: host
+    ports:
+      # DNS pors
+      - "53:53/tcp"
+      - "53:53/udp"
+      # UI
+      - "3000:3000/tcp"
+    logging:
+      driver: json-file
+      options:
+        max-size: "10mb"
+        max-file: "1"
