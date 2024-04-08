@@ -1,9 +1,9 @@
 name: Renovate
 
 on:
-  # Run every 15 minutes
+  # Run every 60 minutes
   schedule:
-    - cron: "0/15 * * * *"
+    - cron: "0/60 * * * *"
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
