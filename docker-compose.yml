@@ -140,7 +140,7 @@ services:
       - TZ=Europe/Madrid #optional
       - LOG_FILE=false #optional
     volumes:
-      - ./duckdns/config:/config #optional
+      - ./data/duckdns/config:/config #optional
     restart: unless-stopped
     logging:
       driver: json-file
