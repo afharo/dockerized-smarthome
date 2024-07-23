@@ -67,6 +67,21 @@ services:
         max-size: "10mb"
         max-file: "1"
 
+  esphome:
+    container_name: esphome
+    restart: always
+    image: ghcr.io/esphome/esphome:2024.7.1
+    volumes:
+      - ./data/esphome/config:/config
+      - /etc/localtime:/etc/localtime:ro
+    privileged: true
+    network_mode: host
+    logging:
+      driver: json-file
+      options:
+        max-size: "10mb"
+        max-file: "1"
+
   matter-server:
     image: ghcr.io/home-assistant-libs/python-matter-server:6.3.0
     container_name: matter-server
