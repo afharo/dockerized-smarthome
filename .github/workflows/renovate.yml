@@ -31,7 +31,7 @@ jobs:
 
       # Runs Renovate in this repo with custom configuration (due to the need for secrets)
       - name: Renovate Bot GitHub Action
-        uses: renovatebot/github-action@v42.0.4
+        uses: renovatebot/github-action@v42.0.5
         with:
           configurationFile: .github/renovate/config.js
           token: "${{ steps.get_token.outputs.token }}"
