@@ -125,6 +125,32 @@ Typically, it's just about updating the `SERVERURL` to match the domain obtained
 
 :warning: Remember to enable port forwarding to 51820/udp in the router.
 
+#### Cloudflare Tunnel
+
+**URL:** <https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/>
+
+**Why:** Using Cloudflare Tunnel to have a secure remote connection to my server.
+
+**Installation:** Copy the [cloudflare-tunnel.base.env](./data/cloudflare-tunnel/cloudflare-tunnel.base.env) to `./data/cloudflare-tunnel/cloudflare-tunnel.env`
+
+```bash
+cp ./data/cloudflare-tunnel/cloudflare-tunnel.base.env ./data/cloudflare-tunnel/cloudflare-tunnel.env
+```
+
+And set the environment variable `TUNNEL_TOKEN` with the one provided by Cloudflare.
+
+> [!NOTE] 
+> HomeAssistant by default rejects requests from reverse proxies. To enable it, we need to add the following configuration to `configuration.yaml`:
+> 
+> ```yaml
+> http:
+>   use_x_forwarded_for: true
+>   trusted_proxies:
+>     - ::1
+>   ip_ban_enabled: true
+>   login_attempts_threshold: 3
+> ```
+
 ### Hotspot
 
 I'm using a hotspot service so my RPi can expose a Wi-Fi AP that I can connect to when I need to take it to a place with no internet.
