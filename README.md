@@ -139,7 +139,8 @@ cp ./data/cloudflare-tunnel/cloudflare-tunnel.base.env ./data/cloudflare-tunnel/
 
 And set the environment variable `TUNNEL_TOKEN` with the one provided by Cloudflare.
 
-> [!NOTE] HomeAssistant by default rejects requests from reverse proxies. To enable it, we need to add the following configuration to `configuration.yaml`:
+> [!NOTE] 
+> HomeAssistant by default rejects requests from reverse proxies. To enable it, we need to add the following configuration to `configuration.yaml`:
 > 
 > ```yaml
 > http:
