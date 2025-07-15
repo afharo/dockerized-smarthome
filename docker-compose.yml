@@ -207,8 +207,6 @@ services:
       - data/cloudflare-tunnel/cloudflare-tunnel.env
     restart: unless-stopped
     network_mode: host
-    links:
-      - homeassistant
     logging:
       driver: json-file
       options:
