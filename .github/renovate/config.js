@@ -1,7 +1,7 @@
 module.exports = {
   extends: [ "config:recommended" ],
   branchPrefix: "gh-actions-renovate/",
-  repositories: [ "afharo/dockerized-smarthome" ],
+  repositories: [ "afharo/dockerized-smarthome", "afharo/matterbridge-xiaomi-roborock" ],
   hostRules: [
     {
       hostType: "docker",
