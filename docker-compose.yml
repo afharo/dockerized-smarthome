@@ -166,7 +166,7 @@ services:
         max-file: "1"
   # VPN
   wireguard:
-    image: linuxserver/wireguard:1.0.20210914
+    image: linuxserver/wireguard:1.0.20250521
     container_name: wireguard
     cap_add:
       - NET_ADMIN
