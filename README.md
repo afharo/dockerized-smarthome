@@ -79,6 +79,14 @@ And set the environment variables as needed.
 
 DISCLAIMER: I'm using a private Docker image for the time being. So other folks might not be able to run it. I'll try to anonymize the other project, so I can make it public, and so the Docker image.
 
+### Matterbridge
+
+**URL**: <https://github.com/Luligu/matterbridge>
+
+**Why:** Similar to [Homebridge](https://homebridge.io) but with Matter integration. My initial use case is to expose my own [Xiaomi Roborock Robot Vacuum](https://github.com/afharo/matterbridge-xiaomi-roborock) as an actual Robot Vacuum to HomeKit.
+
+**Installation:** Once running, open the UI at `http://your-host:8283/` and install the packages that you consider useful for your use case.
+
 ### AdGuard Home
 
 **URL**: <https://github.com/AdguardTeam/AdGuardHome>
