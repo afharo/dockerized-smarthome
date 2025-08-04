@@ -16,6 +16,20 @@ services:
         max-size: "10mb"
         max-file: "1"
 
+  matterbridge:
+    container_name: matterbridge
+    image: luligu/matterbridge:3.2.0
+    network_mode: host                                        # Ensures the Matter mdns works
+    restart: always                                           # Ensures the container always restarts automatically
+    volumes:
+      - ./data/matterbridge/plugins:/root/Matterbridge   # Mounts the Matterbridge plugin directory
+      - ./data/matterbridge/storage:/root/.matterbridge # Mounts the Matterbridge storage directory
+    logging:
+      driver: json-file
+      options:
+        max-size: "10mb"
+        max-file: "1"
+
   homebridge:
     container_name: homebridge
     restart: unless-stopped
