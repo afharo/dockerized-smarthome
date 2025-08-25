@@ -45,11 +45,11 @@ git pull
 
 if [ "$should_pull" = true ]; then
   echo "Updating docker images"
-  docker-compose pull
+  docker compose pull
 fi
 
 echo "Launching updated services"
-docker-compose up -d
+docker compose up -d
 
 echo "Clean up Docker images and unused resources"
 docker image prune -af
