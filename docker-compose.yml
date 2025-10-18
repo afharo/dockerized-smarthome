@@ -120,7 +120,7 @@ services:
   homeassistant:
     container_name: homeassistant
     restart: unless-stopped
-    image: "homeassistant/home-assistant:2025.10.2"
+    image: "homeassistant/home-assistant:2025.10.3"
     volumes:
       - ./data/homeassistant:/config
       - ./data/media:/media # Persist any files uploaded to "My media"
