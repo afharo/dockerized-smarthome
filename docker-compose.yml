@@ -235,7 +235,7 @@ services:
   adguard:
     container_name: adguard
     restart: unless-stopped
-    image: "adguard/adguardhome:v0.107.67"
+    image: "adguard/adguardhome:v0.107.68"
     volumes:
       - ./data/adguard/data:/opt/adguardhome/work
       - ./data/adguard/config:/opt/adguardhome/conf
