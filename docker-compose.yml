@@ -137,7 +137,7 @@ services:
   duplicati:
     container_name: duplicati
     restart: unless-stopped
-    image: linuxserver/duplicati:2.1.0
+    image: linuxserver/duplicati:2.2.0
     environment:
       - PUID=0 # run "id $USER" to fetch these (using root because some containers like homeassistant are privileged and write as root)
       - PGID=0
