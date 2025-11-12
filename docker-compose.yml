@@ -84,7 +84,7 @@ services:
   esphome:
     container_name: esphome
     restart: always
-    image: ghcr.io/esphome/esphome:2025.10.4
+    image: ghcr.io/esphome/esphome:2025.10.5
     volumes:
       - ./data/esphome/config:/config
       - /etc/localtime:/etc/localtime:ro
