@@ -104,9 +104,10 @@ services:
     restart: unless-stopped
     # Required for mDNS to work correctly
     network_mode: host
-    security_opt:
-      # Needed for Bluetooth via dbus
-      - apparmor:unconfined
+    privileged: true
+    # security_opt:
+    #  # Needed for Bluetooth via dbus
+    #  - apparmor:unconfined
     volumes:
       # Create an .env file that sets the USERDIR environment variable.
       - ./data/matter-server/:/data/
