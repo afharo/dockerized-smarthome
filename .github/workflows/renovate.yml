@@ -27,7 +27,7 @@ jobs:
           app_id: ${{ secrets.app_id }}
 
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       # Runs Renovate in this repo with custom configuration (due to the need for secrets)
       - name: Renovate Bot GitHub Action
