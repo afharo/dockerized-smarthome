@@ -82,7 +82,7 @@ services:
 
   esphome:
     container_name: esphome
-    restart: always
+    restart: unless-stopped
     image: ghcr.io/esphome/esphome:2025.11.2
     volumes:
       - ./data/esphome/config:/config
@@ -130,6 +130,35 @@ services:
       options:
         max-size: "10mb"
         max-file: "1"
+
+  whisper:
+    container_name: whisper
+    restart: unless-stopped
+    image: "rhasspy/wyoming-whisper:3.0.2"
+    command: --model auto --language es
+    volumes:
+      - ./data/whisper:/data
+    environment:
+      - TZ=Europe/Madrid
+    ports:
+      - "10300:10300"
+    logging:
+      driver: json-file
+      options:
+        max-size: "10mb"
+        max-file: "1"
+
+  piper:
+    container_name: piper
+    restart: unless-stopped
+    image: "rhasspy/wyoming-piper:2.1.2"
+    command: --voice es_ES-carlfm-x_low
+    volumes:
+      - ./data/piper:/data
+    environment:
+      - TZ=Europe/Madrid
+    ports:
+      - "10200:10200"
 
   duplicati:
     container_name: duplicati
