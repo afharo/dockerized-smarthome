@@ -135,7 +135,7 @@ services:
     container_name: whisper
     restart: unless-stopped
     image: "rhasspy/wyoming-whisper:3.0.2"
-    command: --model auto --language es
+    command: --model custom --custom_model openai/whisper-large-v2 --language es
     volumes:
       - ./data/whisper:/data
     environment:
