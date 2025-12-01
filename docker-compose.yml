@@ -135,7 +135,7 @@ services:
     container_name: whisper
     restart: unless-stopped
     image: "rhasspy/wyoming-whisper:3.0.2"
-    command: --model tiny --language es
+    command: --model tiny-int8 --language es
     volumes:
       - ./data/whisper:/data
     environment:
