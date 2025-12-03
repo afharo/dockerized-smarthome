@@ -138,6 +138,7 @@ services:
     command: --model tiny-int8 --language es
     volumes:
       - ./data/whisper:/data
+      - /dev/dri:/dev/dri # Share the Intel GPU with Whisper for HW acceleration
     environment:
       - TZ=Europe/Madrid
     ports:
