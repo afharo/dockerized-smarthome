@@ -83,7 +83,7 @@ services:
   esphome:
     container_name: esphome
     restart: unless-stopped
-    image: ghcr.io/esphome/esphome:2025.12.0
+    image: ghcr.io/esphome/esphome:2025.12.2
     volumes:
       - ./data/esphome/config:/config
       - /etc/localtime:/etc/localtime:ro
