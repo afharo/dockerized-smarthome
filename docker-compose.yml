@@ -243,7 +243,7 @@ services:
 
   # Cloudflare Tunnel
   cloudflare-tunnel:
-    image: cloudflare/cloudflared:2026.1.1
+    image: cloudflare/cloudflared:2026.1.2
     container_name: cloudflare-tunnel
     command: tunnel --no-autoupdate run # Command to start the Cloudflare tunnel
     env_file:
