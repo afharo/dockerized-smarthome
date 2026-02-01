@@ -134,7 +134,7 @@ services:
   whisper:
     container_name: whisper
     restart: unless-stopped
-    image: "rhasspy/wyoming-whisper:3.0.2"
+    image: "rhasspy/wyoming-whisper:3.1.0"
     command: --model guillaumekln/faster-whisper-medium --language es
     volumes:
       - ./data/whisper:/data
