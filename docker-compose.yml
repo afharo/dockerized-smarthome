@@ -32,7 +32,7 @@ services:
   homebridge:
     container_name: homebridge
     restart: unless-stopped
-    image: "afharo/homebridge:0.0.129"
+    image: "afharo/homebridge:0.0.130"
     volumes:
       - ./data/homebridge:/root/.homebridge
     env_file:
