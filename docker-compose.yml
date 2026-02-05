@@ -152,7 +152,7 @@ services:
   piper:
     container_name: piper
     restart: unless-stopped
-    image: "rhasspy/wyoming-piper:2.2.1"
+    image: "rhasspy/wyoming-piper:2.2.2"
     command: --voice es_ES-carlfm-x_low
     volumes:
       - ./data/piper:/data
