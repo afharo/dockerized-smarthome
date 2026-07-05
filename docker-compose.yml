@@ -17,7 +17,7 @@ services:
 
   matterbridge:
     container_name: matterbridge
-    image: luligu/matterbridge:3.9.2
+    image: luligu/matterbridge:3.9.3
     network_mode: host                                   # Ensures the Matter mdns works
     restart: always                                      # Ensures the container always restarts automatically
     stop_grace_period: 60s                               # Attempt graceful stop to avoid DB corruption
