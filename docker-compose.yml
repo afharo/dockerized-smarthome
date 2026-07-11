@@ -121,7 +121,7 @@ services:
   homeassistant:
     container_name: homeassistant
     restart: unless-stopped
-    image: "homeassistant/home-assistant:2026.7.1"
+    image: "homeassistant/home-assistant:2026.7.2"
     stop_grace_period: 60s                               # Attempt graceful stop to avoid DB corruption
     volumes:
       - ./data/homeassistant:/config
