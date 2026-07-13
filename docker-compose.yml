@@ -270,7 +270,7 @@ services:
   adguard:
     container_name: adguard
     restart: unless-stopped
-    image: "adguard/adguardhome:v0.107.77"
+    image: "adguard/adguardhome:v0.107.78"
     stop_grace_period: 60s                               # Attempt graceful stop to avoid DB corruption
     volumes:
       - ./data/adguard/data:/opt/adguardhome/work
