@@ -158,7 +158,7 @@ services:
   piper:
     container_name: piper
     restart: unless-stopped
-    image: "rhasspy/wyoming-piper:2.4.0"
+    image: "rhasspy/wyoming-piper:2.4.2"
     command: --voice es_ES-carlfm-x_low
     stop_grace_period: 60s                               # Attempt graceful stop to avoid DB corruption
     volumes:
