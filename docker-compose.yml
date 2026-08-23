@@ -87,7 +87,7 @@ services:
   esphome:
     container_name: esphome
     restart: unless-stopped
-    image: ghcr.io/esphome/esphome:2026.8.0
+    image: ghcr.io/esphome/esphome:2026.8.1
     stop_grace_period: 60s                               # Attempt graceful stop to avoid DB corruption
     volumes:
       - ./data/esphome/config:/config
