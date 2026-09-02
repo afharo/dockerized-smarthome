@@ -67,7 +67,7 @@ services:
   zigbee2mqtt:
     container_name: zigbee2mqtt
     restart: unless-stopped
-    image: koenkk/zigbee2mqtt:2.13.0
+    image: koenkk/zigbee2mqtt:2.14.0
     stop_grace_period: 60s                               # Attempt graceful stop to avoid DB corruption
     volumes:
       - ./data/zigbee2mqtt:/app/data
