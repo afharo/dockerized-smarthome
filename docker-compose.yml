@@ -171,7 +171,7 @@ services:
   duplicati:
     container_name: duplicati
     restart: unless-stopped
-    image: linuxserver/duplicati:2.3.0
+    image: linuxserver/duplicati:2.4.0
     stop_grace_period: 60s                               # Attempt graceful stop to avoid DB corruption
     environment:
       - PUID=0 # run "id $USER" to fetch these (using root because some containers like homeassistant are privileged and write as root)
