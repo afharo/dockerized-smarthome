@@ -63,30 +63,6 @@ And set the environment variables as needed.
 
 DISCLAIMER: Duplicati dropped support for the architecture `linux/arm/v7` because managing the underlying libraries and dependencies in this architecture was too complex. If running on a Raspberry Pi, make sure it's running a 64-bit OS.
 
-### Homebridge
-
-**URL**: <https://homebridge.io>
-
-**Why:** As a HomeKit user, there are devices that would make a great addition to my automations, but they are not officially supported by this platform. I've been using this project for a long while, and I've already found out Home Assistant cannot fully replace it.
-
-**Installation:** Copy the [homebridge.base.env](./data/homebridge/homebridge.base.env) to `./data/homebridge/homebridge.env`
-
-```bash
-cp ./data/homebridge/homebridge.base.env ./data/homebridge/homebridge.env
-```
-
-And set the environment variables as needed.
-
-DISCLAIMER: I'm using a private Docker image for the time being. So other folks might not be able to run it. I'll try to anonymize the other project, so I can make it public, and so the Docker image.
-
-### Matterbridge
-
-**URL**: <https://github.com/Luligu/matterbridge>
-
-**Why:** Similar to [Homebridge](https://homebridge.io) but with Matter integration. My initial use case is to expose my own [Xiaomi Roborock Robot Vacuum](https://github.com/afharo/matterbridge-xiaomi-roborock) as an actual Robot Vacuum to HomeKit.
-
-**Installation:** Once running, open the UI at `http://your-host:8283/` and install the packages that you consider useful for your use case.
-
 ### AdGuard Home
 
 **URL**: <https://github.com/AdguardTeam/AdGuardHome>

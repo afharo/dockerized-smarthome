@@ -15,38 +15,6 @@ services:
         max-size: "10mb"
         max-file: "1"
 
-  matterbridge:
-    container_name: matterbridge
-    image: luligu/matterbridge:3.10.12
-    network_mode: host                                   # Ensures the Matter mdns works
-    restart: always                                      # Ensures the container always restarts automatically
-    stop_grace_period: 60s                               # Attempt graceful stop to avoid DB corruption
-    volumes:
-      - ./data/matterbridge/plugins:/root/Matterbridge   # Mounts the Matterbridge plugin directory
-      - ./data/matterbridge/storage:/root/.matterbridge  # Mounts the Matterbridge storage directory
-    logging:
-      driver: json-file
-      options:
-        max-size: "10mb"
-        max-file: "1"
-
-  homebridge:
-    container_name: homebridge
-    restart: unless-stopped
-    image: "afharo/homebridge:0.0.162"
-    volumes:
-      - ./data/homebridge:/root/.homebridge
-    env_file:
-      - ./data/homebridge/homebridge.env
-    privileged: true
-    network_mode: host
-    stop_grace_period: 60s                               # Attempt graceful stop to avoid DB corruption
-    logging:
-      driver: json-file
-      options:
-        max-size: "10mb"
-        max-file: "1"
-
   mqtt:
     container_name: mqtt
     restart: unless-stopped
