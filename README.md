@@ -39,7 +39,7 @@ cp data/zigbee2mqtt/configuration.base.yaml data/zigbee2mqtt/configuration.yaml
 
 ### Matter Server
 
-**URL:** <https://github.com/home-assistant-libs/python-matter-server>
+**URL:** <https://github.com/matter-js/matterjs-server>
 
 **Why:** Needed by Home Assistant to support Matter devices ([docs](https://www.home-assistant.io/integrations/matter)).
 
