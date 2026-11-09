@@ -69,7 +69,7 @@ services:
         max-file: "1"
 
   matter-server:
-    image: ghcr.io/matter-js/python-matter-server:8.1.2
+    image: ghcr.io/matter-js/matterjs-server:8.1.2
     container_name: matter-server
     restart: unless-stopped
     stop_grace_period: 60s                               # Attempt graceful stop to avoid DB corruption
